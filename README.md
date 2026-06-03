@@ -1,5 +1,5 @@
-# AI Engineering Portfolio
+# Portfolio
 
-Single-page executive portfolio summary for AI engineering leadership positioning.
+Single-page engineering portfolio summary for public GitHub Pages sharing.
 
 The page is self-contained and anonymized for public sharing.
