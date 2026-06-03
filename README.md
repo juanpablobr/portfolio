@@ -1,5 +1,5 @@
-# Portfolio
+# Agentic AI Portfolio
 
-Single-page engineering portfolio summary for public GitHub Pages sharing.
+Single-page portfolio for Juan Betancourt, focused on agentic AI, automation, and infrastructure engineering.
 
 The page is self-contained and anonymized for public sharing.
