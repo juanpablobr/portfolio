@@ -3,44 +3,383 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Juan Betancourt | Agentic AI Portfolio</title>
-  <style>body{background:#f5f7fb;color:#172033;margin:0;font:13px/1.38 ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}main.container{width:min(1120px,calc(100% - 32px));margin:0 auto;padding:20px 0 32px}h1,h2{color:#0f172a}h1{line-height:1;margin:0 0 14px}h2{font-size:1.18rem;font-weight:650;line-height:1.15;margin:0 0 12px}.title-owner{display:block;color:#2563eb;font-size:clamp(1rem,1.4vw,1.15rem);font-weight:650;letter-spacing:0;margin-bottom:6px}.title-main{display:block;font-size:clamp(1.8rem,3.4vw,2.35rem);font-weight:700;letter-spacing:0}.title-sub{display:block;font-size:clamp(1.05rem,1.7vw,1.28rem);font-weight:400;letter-spacing:0;margin-top:5px}p,li,td{color:#334155}p{margin:0 0 9px}.card{background:#fff;border:1px solid #d8dee9;border-radius:4px;box-shadow:0 10px 26px rgba(15,23,42,.08);margin:0}.card .card-content{padding:12px}main>section.card,main>div.card{margin-bottom:12px}.muted{color:#475569}.grid{display:grid;gap:12px;margin-bottom:12px}.grid.hero{grid-template-columns:minmax(0,1.8fr) minmax(320px,1fr);align-items:stretch}.snapshot{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:10px}.stat{background:#f8fafc;border:1px solid #d8dee9;border-left:3px solid #2563eb;padding:8px 10px}.stat strong{display:block;color:#0f172a;font-size:1.2rem;font-weight:650;line-height:1.1}.stat span{display:block;color:#475569;font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;margin-top:5px}.hero-list{margin:0;padding-left:0}.hero-list li{position:relative;list-style:none;padding-left:18px;margin-bottom:6px}.hero-list li:before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;background:#2563eb}.hero-list strong{color:#0f172a;font-weight:650}table{width:100%;border-collapse:collapse;border:1px solid #d8dee9;background:#fff}th,td{text-align:left;vertical-align:top;border-bottom:1px solid #e5e7eb;padding:6px 7px}th{background:#eff4fb;color:#0f172a;font-weight:650}td strong{color:#0f172a;font-weight:650}tr:last-child td{border-bottom:0}.footer{color:#64748b;font-size:.82rem;margin-top:14px}.wide{overflow:auto}@page{size:A4 landscape;margin:5mm}@media print{body{background:#fff;color:#111;font-size:8.5px;line-height:1.22}main.container{width:100%;padding:0}h1{margin-bottom:6px}.title-owner{font-size:.78rem;margin-bottom:3px}.title-main{font-size:1.45rem}.title-sub{font-size:.86rem;margin-top:3px}h2{font-size:1rem;margin-bottom:6px}p{margin-bottom:4px}.grid{gap:6px;margin-bottom:6px}.card .card-content{padding:6px}main>section.card,main>div.card{margin-bottom:6px}.snapshot{margin-top:6px;gap:5px}.stat{padding:4px 6px;border-left-width:2px}.stat strong{font-size:.9rem}.stat span{font-size:.55rem}.hero-list li{margin-bottom:3px;padding-left:12px}.hero-list li:before{width:4px;height:4px}th,td{padding:3px 4px}p,li,td,.muted{color:#222}.card,table{box-shadow:none;background:#fff;border-color:#bbb}.stat,th{background:#f3f4f6}.stat strong,td strong,h1,h2{color:#111}.hero-list li:before{background:#444}}@media(max-width:980px){.grid.hero{grid-template-columns:1fr}.snapshot{grid-template-columns:repeat(2,minmax(0,1fr))}}</style>
+  <title>Juan Betancourt | AI Platform and Agent Security Portfolio</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #13202f;
+      --ink-strong: #07111f;
+      --muted: #475569;
+      --line: #d8e0ea;
+      --panel: #ffffff;
+      --canvas: #f4f7fb;
+      --blue: #225ea8;
+      --teal: #087f7a;
+      --amber: #a16207;
+      --green: #167444;
+      --soft-blue: #eaf2ff;
+      --soft-teal: #e7f7f4;
+      --soft-amber: #fff4da;
+      --soft-green: #e8f6ee;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      background: var(--canvas);
+      color: var(--ink);
+      margin: 0;
+      font: 14px/1.45 ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    main.container {
+      width: min(1160px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 22px 0 34px;
+    }
+
+    h1, h2, h3 { color: var(--ink-strong); margin: 0; letter-spacing: 0; }
+    h1 { line-height: 1; }
+    h2 { font-size: 1.12rem; line-height: 1.2; margin-bottom: 10px; }
+    h3 { font-size: .94rem; line-height: 1.2; margin-bottom: 5px; }
+    p { color: #304256; margin: 0 0 9px; }
+    strong { color: var(--ink-strong); font-weight: 680; }
+
+    .eyebrow {
+      color: var(--teal);
+      display: block;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .title-owner {
+      color: var(--blue);
+      display: block;
+      font-size: clamp(1rem, 1.3vw, 1.14rem);
+      font-weight: 700;
+      margin-bottom: 7px;
+    }
+
+    .title-main {
+      display: block;
+      font-size: clamp(1.78rem, 3.2vw, 2.55rem);
+      font-weight: 760;
+      max-width: 980px;
+    }
+
+    .title-sub {
+      color: #334155;
+      display: block;
+      font-size: clamp(1.02rem, 1.45vw, 1.26rem);
+      font-weight: 430;
+      line-height: 1.28;
+      margin-top: 9px;
+      max-width: 980px;
+    }
+
+    .grid { display: grid; gap: 12px; margin-bottom: 12px; }
+    .hero { grid-template-columns: minmax(0, 1.65fr) minmax(320px, .85fr); align-items: stretch; }
+    .two { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+    .three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      box-shadow: 0 14px 30px rgba(15, 23, 42, .07);
+    }
+
+    .card-content { padding: 15px; }
+    main > section.card, main > div.card { margin-bottom: 12px; }
+
+    .lede {
+      border-left: 4px solid var(--teal);
+      color: #26384c;
+      margin-top: 13px;
+      padding-left: 12px;
+    }
+
+    .snapshot {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      margin-top: 14px;
+    }
+
+    .stat {
+      background: #f8fafc;
+      border: 1px solid var(--line);
+      border-top: 3px solid var(--blue);
+      min-height: 76px;
+      padding: 10px;
+    }
+
+    .stat:nth-child(2) { border-top-color: var(--teal); }
+    .stat:nth-child(3) { border-top-color: var(--amber); }
+    .stat:nth-child(4) { border-top-color: var(--green); }
+    .stat strong { display: block; font-size: 1.38rem; line-height: 1.08; }
+    .stat span {
+      color: var(--muted);
+      display: block;
+      font-size: .73rem;
+      font-weight: 650;
+      letter-spacing: .04em;
+      margin-top: 6px;
+      text-transform: uppercase;
+    }
+
+    .practice-list { list-style: none; margin: 0; padding: 0; }
+    .practice-list li {
+      border-bottom: 1px solid #edf1f6;
+      color: #334155;
+      padding: 8px 0 8px 18px;
+      position: relative;
+    }
+
+    .practice-list li:first-child { padding-top: 0; }
+    .practice-list li:last-child { border-bottom: 0; padding-bottom: 0; }
+    .practice-list li:before {
+      background: var(--teal);
+      content: "";
+      height: 7px;
+      left: 0;
+      position: absolute;
+      top: 1.03em;
+      width: 7px;
+    }
+
+    .proof-card {
+      border-left: 4px solid var(--blue);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      min-height: 100%;
+    }
+
+    .proof-card.teal { border-left-color: var(--teal); }
+    .proof-card.amber { border-left-color: var(--amber); }
+    .proof-card.green { border-left-color: var(--green); }
+    .proof-card p { margin-bottom: 0; }
+
+    .tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+    .tag {
+      background: var(--soft-blue);
+      border: 1px solid #c9ddfb;
+      color: #16467d;
+      display: inline-flex;
+      font-size: .74rem;
+      font-weight: 650;
+      line-height: 1;
+      padding: 6px 7px;
+    }
+
+    .tag.teal { background: var(--soft-teal); border-color: #b9e7df; color: #0d5f5b; }
+    .tag.amber { background: var(--soft-amber); border-color: #f2d393; color: #7a4b08; }
+    .tag.green { background: var(--soft-green); border-color: #bfe2cc; color: #126036; }
+
+    table {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border-bottom: 1px solid #e6ebf1;
+      color: #334155;
+      padding: 8px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #eef4fb;
+      color: var(--ink-strong);
+      font-size: .78rem;
+      font-weight: 750;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+    .wide { overflow: auto; }
+    .muted { color: var(--muted); }
+    .footer { color: #64748b; font-size: .82rem; margin-top: 14px; }
+
+    @media (max-width: 980px) {
+      .hero, .two, .three { grid-template-columns: 1fr; }
+      .snapshot { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 560px) {
+      main.container { width: min(100% - 20px, 1160px); padding-top: 12px; }
+      .snapshot { grid-template-columns: 1fr; }
+      th, td { padding: 7px; }
+    }
+
+    @page { size: A4 landscape; margin: 5mm; }
+
+    @media print {
+      body { background: #fff; color: #111; font-size: 8.4px; line-height: 1.22; }
+      main.container { width: 100%; padding: 0; }
+      .card { box-shadow: none; border-color: #b8c0cc; border-radius: 3px; }
+      .card-content { padding: 6px; }
+      .grid { gap: 6px; margin-bottom: 6px; }
+      main > section.card, main > div.card { margin-bottom: 6px; }
+      .title-owner { font-size: .78rem; margin-bottom: 3px; }
+      .title-main { font-size: 1.5rem; }
+      .title-sub { font-size: .84rem; margin-top: 4px; }
+      h2 { font-size: .96rem; margin-bottom: 5px; }
+      h3 { font-size: .78rem; margin-bottom: 3px; }
+      p { margin-bottom: 3px; }
+      .lede { margin-top: 6px; padding-left: 7px; border-left-width: 2px; }
+      .snapshot { gap: 5px; margin-top: 6px; }
+      .stat { min-height: 0; padding: 4px 5px; border-top-width: 2px; }
+      .stat strong { font-size: .88rem; }
+      .stat span { font-size: .52rem; margin-top: 2px; }
+      .practice-list li { padding: 3px 0 3px 10px; }
+      .practice-list li:before { height: 4px; top: .8em; width: 4px; }
+      .tag-row { gap: 3px; margin-top: 4px; }
+      .tag { font-size: .5rem; padding: 3px 4px; }
+      th, td { padding: 3px 4px; }
+      p, li, td, .muted { color: #222; }
+      .hero { grid-template-columns: 1.6fr .9fr; }
+      .two { grid-template-columns: 1fr 1fr; }
+      .three { grid-template-columns: repeat(3, 1fr); }
+    }
+  </style>
 </head>
 <body>
 <main class="container">
   <section class="grid hero">
     <div class="card"><div class="card-content">
-      <h1><span class="title-owner">Juan Betancourt</span><span class="title-main">Agentic AI Portfolio</span><span class="title-sub">Operations-focused AI, automation, and infrastructure projects grounded in SOC engineering, data trust, evaluation gates, and human-in-the-loop controls.</span></h1>
-      <p>Snapshot of personal engineering projects from the last 6 months, built to connect practical AI and automation work with SOC engineering, high-scale infrastructure, data pipelines, and governed operations.</p>
-      <p class="muted">Grounded in 15+ years of mission-critical security operations, architecture, automation, and technical organization leadership.</p>
+      <h1>
+        <span class="title-owner">Juan Betancourt</span>
+        <span class="title-main">AI platform engineering, secure agent operations, and governance by design.</span>
+        <span class="title-sub">Hands-on builder of AI-native development and operations systems: agent workflows, platform standards, credential boundaries, evaluation gates, and human-approved automation for high-impact environments.</span>
+      </h1>
+      <p class="lede">This portfolio is a public, anonymized view of recent engineering work. It emphasizes reusable patterns and operating controls rather than private infrastructure details.</p>
       <div class="snapshot">
-        <div class="stat"><strong>10</strong><span>Projects</span></div>
-        <div class="stat"><strong>143,693</strong><span>Lines of code</span></div>
-        <div class="stat"><strong>811</strong><span>Source files</span></div>
-        <div class="stat"><strong>94</strong><span>QA checks</span></div>
+        <div class="stat"><strong>44</strong><span>GitHub repos reviewed</span></div>
+        <div class="stat"><strong>32</strong><span>Active in 2026</span></div>
+        <div class="stat"><strong>21</strong><span>AI, security, platform repos</span></div>
+        <div class="stat"><strong>Python + TS</strong><span>Primary build stack</span></div>
       </div>
     </div></div>
     <div class="card"><div class="card-content">
-      <h2>Engineering Practices</h2>
-      <ul class="hero-list">
-        <li><strong>Architecture before automation:</strong> define operating model, data ownership, SLAs/SLOs, and failure modes before implementation.</li>
-        <li><strong>Production controls:</strong> durable state, least-privilege access, audit trails, monitoring, and runbook-ready handoff.</li>
-        <li><strong>Data trust first:</strong> ingestion quality, validation, lineage, and evaluation before model or agent behavior.</li>
-        <li><strong>Agentic AI only where justified:</strong> use agents for ambiguous analysis and decision support; keep deterministic workflows in traditional logic.</li>
-        <li><strong>Human-in-the-loop operations:</strong> scoring, approvals, review queues, exception handling, and clear operator actions.</li>
-        <li><strong>QA as a delivery gate:</strong> smoke checks, module tests, browser validation, and workflow evidence before handoff.</li>
+      <h2>Operating Principles</h2>
+      <ul class="practice-list">
+        <li><strong>Agents need boundaries:</strong> permission scope, tool access, approval rules, and audit evidence are part of the design, not a later control.</li>
+        <li><strong>Strategy must compile:</strong> standards, runbooks, wrappers, tests, and deployment paths turn governance into repeatable engineering behavior.</li>
+        <li><strong>Lean teams need leverage:</strong> small senior groups can coordinate agents, vendors, and automation when ownership and validation are explicit.</li>
+        <li><strong>Security is operational:</strong> secret handling, tenant isolation, credential rotation, publication controls, and review gates are first-class platform primitives.</li>
+        <li><strong>AI is not magic glue:</strong> deterministic workflows stay deterministic; agents are used where ambiguity, synthesis, or adaptive execution adds value.</li>
       </ul>
     </div></div>
   </section>
+
+  <section class="grid three">
+    <div class="card proof-card"><div class="card-content">
+      <span class="eyebrow">Current Platform Work</span>
+      <h2>Development intelligence layer</h2>
+      <p>A reusable harness for multi-agent development: shared policy, skills, inventory, validation helpers, queueing, and delivery gates across Codex, Claude, Hermes, browser automation, and future agent surfaces.</p>
+      <div class="tag-row">
+        <span class="tag">agent policy</span>
+        <span class="tag teal">validation gates</span>
+        <span class="tag amber">practice memory</span>
+      </div>
+    </div></div>
+    <div class="card proof-card teal"><div class="card-content">
+      <span class="eyebrow">Ops Governance</span>
+      <h2>Control-plane practices</h2>
+      <p>Ops-owned deployment and fleet practices: deterministic host lifecycle, role boundaries, inventory-backed runtime reuse, Ansible-owned applies, and reviewable paths for host mutation instead of ad hoc scripts.</p>
+      <div class="tag-row">
+        <span class="tag teal">fleet standards</span>
+        <span class="tag green">ops-owned paths</span>
+        <span class="tag amber">change evidence</span>
+      </div>
+    </div></div>
+    <div class="card proof-card amber"><div class="card-content">
+      <span class="eyebrow">AI Security</span>
+      <h2>Secure agent workflow model</h2>
+      <p>Agent autonomy is constrained through least privilege, tool routing, two-surface validation, human approvals for high-impact operations, secrets outside repos, and public/private boundary discipline.</p>
+      <div class="tag-row">
+        <span class="tag amber">least privilege</span>
+        <span class="tag">human approval</span>
+        <span class="tag teal">auditability</span>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="grid two">
+    <div class="card"><div class="card-content">
+      <h2>What the Work Shows</h2>
+      <table>
+        <thead><tr><th>Capability</th><th>Evidence in Recent Work</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Greenfield AI platform design</strong></td><td>Separated development intelligence, ops control plane, shared runtimes, target hosts, and future artifact-protection layers so responsibilities can scale without collapsing into one fragile system.</td></tr>
+          <tr><td><strong>Agent governance</strong></td><td>Defined coordinated agent roles, plan-first execution, bounded retries, two-gate validation, adversarial review, structured handoffs, and operator approval points for risky operations.</td></tr>
+          <tr><td><strong>Credential and tenant boundaries</strong></td><td>Designed tenant-scoped vaults, short-lived bootstrap paths, read-only connect credentials, ops-only provisioning credentials, and no-secret-in-git delivery rules.</td></tr>
+          <tr><td><strong>Platform security engineering</strong></td><td>Built patterns for SSO/OTP, Caddy-authenticated publication, private runtime config, secret scanning, runtime inventory, and controlled host access.</td></tr>
+          <tr><td><strong>Security AI delivery</strong></td><td>Delivered SOC and vulnerability-analysis experiences with benchmarking, evidence review, tenant-aware views, remediation workflows, and secure migration of legacy runtime state.</td></tr>
+        </tbody>
+      </table>
+    </div></div>
+    <div class="card"><div class="card-content">
+      <h2>Financial-Services-Relevant Strengths</h2>
+      <table>
+        <thead><tr><th>Need</th><th>Portfolio Signal</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Small senior team, high leverage</strong></td><td>Operating model assumes agents and automation extend a lean team, while humans keep ownership of architecture, risk, approvals, and final output.</td></tr>
+          <tr><td><strong>Portfolio-level standards</strong></td><td>Reusable harness and ops standards create common practice across different apps, hosts, runtimes, and teams without requiring one monolithic technology stack.</td></tr>
+          <tr><td><strong>Vendor and internal accountability</strong></td><td>Workflows emphasize acceptance criteria, validation evidence, provenance, and runbook-ready handoff so responsibility is visible regardless of who or what executes.</td></tr>
+          <tr><td><strong>Multicloud and SaaS-heavy reality</strong></td><td>Projects span Azure cost governance, SSO, messaging gateways, browser automation, local model runtimes, and AI advisors with provider-neutral integration patterns.</td></tr>
+          <tr><td><strong>Security-first AI adoption</strong></td><td>Agent access is treated like production access: scoped credentials, inventory-backed reuse, explicit trust boundaries, and durable logs/evidence before scale.</td></tr>
+        </tbody>
+      </table>
+    </div></div>
+  </section>
+
   <section class="card"><div class="card-content wide">
-    <h2>Projects Snapshot</h2>
+    <h2>Recent Project Map</h2>
     <table>
-      <thead><tr><th>Project Goal</th><th>Components</th></tr></thead>
+      <thead><tr><th>Project Pattern</th><th>What It Demonstrates</th><th>Core Components</th></tr></thead>
       <tbody>
-        <tr><td>Cloud Cost Intelligence Platform: Azure cost governance, forecasting, optimization workflows.</td><td>Cloud APIs, cost analytics, forecasting models, policy rules, reporting dashboard.</td></tr><tr><td>Enterprise Services AI Advisor: service advisory workflows, structured recommendations, operator review.</td><td>Agentic framework, knowledge retrieval, recommendation engine, review queue, service catalog.</td></tr><tr><td>Executive Decision Agent: executive advisory flows, brief generation, action tracking.</td><td>Conversational interface, reasoning loop, briefing generator, memory store, action tracker.</td></tr><tr><td>Listing Intelligence Automation: listing discovery, ranking, outreach preparation, decision support.</td><td>Browser automation, ranking engine, contact workflow, data pipeline, decision dashboard.</td></tr><tr><td>Local Generative Workflow Platform: local AI generation, GPU-backed inference, review workflow.</td><td>Local model runtime, GPU inference, generation pipeline, content review, private storage.</td></tr><tr><td>Media Intelligence and Vault Platform: queue automation, media health, protected storage, operational dashboard.</td><td>Queue workers, media processing pipeline, vault storage, health monitoring, admin dashboard.</td></tr><tr><td>Messaging Workflow Agent: chat-operated workflow automation with durable task state.</td><td>Messaging gateway, webhook handlers, workflow engine, durable task store, notification delivery.</td></tr><tr><td>Security AI Evaluation Platform: SOC investigation benchmarking, evidence review, evaluation flows.</td><td>Benchmark harness, evidence ingestion, evaluation scoring, SOC workflow model, reporting UI.</td></tr><tr><td>Security Executive Command Center: executive risk, control, and operational reporting.</td><td>Risk dashboard, controls model, executive reporting, data aggregation, status workflows.</td></tr><tr><td>Travel Decision Intelligence Platform: live search automation, candidate scoring, saved analysis workflow.</td><td>Search automation, scoring pipeline, saved analysis store, comparison UI, alerting workflow.</td></tr>
+        <tr><td><strong>AI development harness</strong></td><td>Codifies how multiple agent surfaces collaborate, validate, and hand off work without relying on one operator's memory.</td><td>Shared policy, skills, inventory, queueing, validation helpers, browser QA, source-control workflow.</td></tr>
+        <tr><td><strong>Ops control plane</strong></td><td>Moves host lifecycle and fleet changes into deterministic, ops-owned paths with explicit role and credential separation.</td><td>Ansible roles, fleet inventory, credential lifecycle, host health, provisioning utilities, dry-run evidence.</td></tr>
+        <tr><td><strong>Secure SSO and forward-auth service</strong></td><td>Shows browser publication with authenticated access, messaging-based OTP, and private secret resolution.</td><td>Caddy forward auth, OTP workflow, 1Password-backed config, tests, deployment docs.</td></tr>
+        <tr><td><strong>Security AI evaluation platform</strong></td><td>Benchmarks AI support for SOC investigations with evidence handling and reviewable scoring.</td><td>Evaluation harness, evidence ingestion, reporting UI, TypeScript frontend, testable workflows.</td></tr>
+        <tr><td><strong>Vulnerability intelligence dashboard</strong></td><td>Turns legacy security data workflows into governed dashboard experiences with tenant-aware state and safer token handling.</td><td>React/Vite UI, legacy backend isolation, tenant models, remediation views, secret import patterns.</td></tr>
+        <tr><td><strong>Executive security cockpit</strong></td><td>Connects security program maps, authentication, and future AI advisor integration in a governed browser app.</td><td>shadcn/Radix UI, NIST CSF mapping, OTP login, shared AgentOS integration boundary.</td></tr>
+        <tr><td><strong>Azure FinOps intelligence</strong></td><td>Applies data quality, access control, and report generation to cloud cost governance and forecasting.</td><td>Azure APIs, ingestion jobs, budget alerts, PDF/Excel reporting, role-scoped views.</td></tr>
+        <tr><td><strong>AI services advisor</strong></td><td>Demonstrates generative user interfaces that convert ambiguous business needs into structured service recommendations.</td><td>Next.js app, provider-neutral LLM contract, curated knowledge, lead workflow, guardrails.</td></tr>
+        <tr><td><strong>Messaging automation runtime</strong></td><td>Supports chat-operated automation while preserving session boundaries, server-side credentials, and operator controls.</td><td>WAHA derivative, API keys, telemetry, dashboard integration, notification workflows.</td></tr>
+        <tr><td><strong>Hermes agent adapter</strong></td><td>Ports another agent surface into the same policy, skill, provider, and messaging model instead of creating a silo.</td><td>Installer, shared skills, provider injection, WhatsApp gateway plugin, runtime validation.</td></tr>
+        <tr><td><strong>Listing and travel decision automation</strong></td><td>Uses browser automation, ranking, saved analysis, and human review to improve ambiguous decision workflows.</td><td>Search automation, scoring, contact preparation, persisted candidate analysis, review UI.</td></tr>
+        <tr><td><strong>Local AI workflow platform</strong></td><td>Explores private generation workflows with local inference and review boundaries.</td><td>GPU/local model runtime, generation pipeline, review queue, private storage.</td></tr>
       </tbody>
     </table>
-    </div></section>
+  </div></section>
+
+  <section class="grid three">
+    <div class="card proof-card green"><div class="card-content">
+      <h2>Security Posture</h2>
+      <p>Secrets stay outside git; credentials are scoped by tenant, host, and runtime role; mutating operations require deterministic entrypoints, dry-runs, or explicit approval where impact is high.</p>
+    </div></div>
+    <div class="card proof-card teal"><div class="card-content">
+      <h2>Delivery Posture</h2>
+      <p>Work is finished only when there is evidence: tests, build output, browser validation, service status, public route checks, or structured handoff reports depending on the surface.</p>
+    </div></div>
+    <div class="card proof-card amber"><div class="card-content">
+      <h2>Leadership Posture</h2>
+      <p>The goal is not larger teams or uncontrolled autonomy. The model is a small accountable group using standards, agents, vendors, and automation with clear ownership of the output.</p>
+    </div></div>
+  </section>
+
+  <p class="footer">Updated June 2026 from a full GitHub inventory and focused review of current AI, security, platform, and operations repositories. Public wording intentionally abstracts private repo internals, host facts, credentials, and client-specific details.</p>
 </main>
 </body>
 </html>
