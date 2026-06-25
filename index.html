@@ -13,14 +13,16 @@
       --line: #d8e0ea;
       --panel: #ffffff;
       --canvas: #f4f7fb;
-      --blue: #225ea8;
-      --teal: #087f7a;
-      --amber: #a16207;
-      --green: #167444;
+      --blue: #1d4f8f;
+      --teal: #0f766e;
+      --amber: #b45309;
+      --green: #166534;
       --soft-blue: #eaf2ff;
       --soft-teal: #e7f7f4;
       --soft-amber: #fff4da;
       --soft-green: #e8f6ee;
+      --tag-bg: #eef2f7;
+      --tag-line: #cbd5e1;
     }
 
     * { box-sizing: border-box; }
@@ -112,14 +114,11 @@
     .stat {
       background: #f8fafc;
       border: 1px solid var(--line);
-      border-top: 3px solid var(--blue);
+      border-top: 3px solid var(--teal);
       min-height: 76px;
       padding: 10px;
     }
 
-    .stat:nth-child(2) { border-top-color: var(--teal); }
-    .stat:nth-child(3) { border-top-color: var(--amber); }
-    .stat:nth-child(4) { border-top-color: var(--green); }
     .stat strong { display: block; font-size: 1.38rem; line-height: 1.08; }
     .stat span {
       color: var(--muted);
@@ -152,7 +151,7 @@
     }
 
     .proof-card {
-      border-left: 4px solid var(--blue);
+      border-left: 4px solid var(--teal);
       display: flex;
       flex-direction: column;
       gap: 6px;
@@ -160,15 +159,16 @@
     }
 
     .proof-card.teal { border-left-color: var(--teal); }
-    .proof-card.amber { border-left-color: var(--amber); }
-    .proof-card.green { border-left-color: var(--green); }
+    .proof-card.amber { border-left-color: var(--teal); }
+    .proof-card.green { border-left-color: var(--teal); }
     .proof-card p { margin-bottom: 0; }
 
     .tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
     .tag {
-      background: var(--soft-blue);
-      border: 1px solid #c9ddfb;
-      color: #16467d;
+      background: var(--tag-bg);
+      border: 1px solid var(--tag-line);
+      border-left: 3px solid var(--blue);
+      color: #334155;
       display: inline-flex;
       font-size: .74rem;
       font-weight: 650;
@@ -176,9 +176,9 @@
       padding: 6px 7px;
     }
 
-    .tag.teal { background: var(--soft-teal); border-color: #b9e7df; color: #0d5f5b; }
-    .tag.amber { background: var(--soft-amber); border-color: #f2d393; color: #7a4b08; }
-    .tag.green { background: var(--soft-green); border-color: #bfe2cc; color: #126036; }
+    .tag.teal { border-left-color: var(--teal); }
+    .tag.amber { border-left-color: var(--amber); }
+    .tag.green { border-left-color: var(--green); }
 
     table {
       background: #fff;
